@@ -9,25 +9,27 @@ class IntervalViewModel: ObservableObject {
         case work, rest, finished
     }
 
-    // Сохраняемые параметры
+    // Stored preferences
     @AppStorage("vibrationEnabled") private var storedVibrationEnabled: Bool = true
     @AppStorage("soundEnabled") private var storedSoundEnabled: Bool = true
-    @AppStorage("workColorName") private var storedWorkColorName: String = "red"
-    @AppStorage("restColorName") private var storedRestColorName: String = "green"
+    @AppStorage("workColorHex") private var storedWorkColorHex: String = "#FF0000"
+    @AppStorage("restColorHex") private var storedRestColorHex: String = "#00FF00"
+    @AppStorage("workVibrationCount") private var storedWorkVibrationCount: Int = 1
+    @AppStorage("restVibrationCount") private var storedRestVibrationCount: Int = 1
 
-    // Публичные параметры
+    // Public state
     @Published var settings: IntervalSettings
     @Published var currentRound = 0
     @Published var phase: Phase = .work
     @Published var isRunning = false
     @Published var remainingMilliseconds: Double = 0
-    @Published var workColorName: String
-    @Published var restColorName: String
 
     var vibrationEnabled: Bool { storedVibrationEnabled }
     var soundEnabled: Bool { storedSoundEnabled }
-    var workColor: Color { Color(workColorName) }
-    var restColor: Color { Color(restColorName) }
+    var workColor: Color { Color(hex: storedWorkColorHex) }
+    var restColor: Color { Color(hex: storedRestColorHex) }
+    var workVibrationCount: Int { storedWorkVibrationCount }
+    var restVibrationCount: Int { storedRestVibrationCount }
 
     private var timer: Timer?
 
@@ -35,8 +37,6 @@ class IntervalViewModel: ObservableObject {
         let rounds = UserDefaults.standard.integer(forKey: "rounds")
         let work = UserDefaults.standard.integer(forKey: "workDuration")
         let rest = UserDefaults.standard.integer(forKey: "restDuration")
-        let workColor = UserDefaults.standard.string(forKey: "workColorName") ?? "red"
-        let restColor = UserDefaults.standard.string(forKey: "restColorName") ?? "green"
 
         self.settings = IntervalSettings(
             rounds: rounds > 0 ? rounds : 6,
@@ -44,8 +44,6 @@ class IntervalViewModel: ObservableObject {
             restDuration: rest > 0 ? rest : 8
         )
 
-        self.workColorName = workColor
-        self.restColorName = restColor
         self.remainingMilliseconds = Double(self.settings.workDuration) * 1000
     }
 
@@ -127,7 +125,22 @@ class IntervalViewModel: ObservableObject {
             AudioServicesPlaySystemSound(soundID)
         }
         if vibrationEnabled {
+            let count = phase == .work ? workVibrationCount
+                : phase == .rest ? restVibrationCount
+                : 1
+            vibrate(repeats: count)
+        }
+    }
+    
+    private func vibrate(repeats: Int) {
+        guard repeats > 0 else { return }
+        
+        DispatchQueue.main.async {
             AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
+        }
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
+            self.vibrate(repeats: repeats - 1)
         }
     }
 }
