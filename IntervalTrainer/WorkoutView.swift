@@ -10,7 +10,7 @@ struct WorkoutView: View {
                 .ignoresSafeArea()
 
             VStack(spacing: 24) {
-                // Раунд + статус
+                // Round and status
                 VStack(spacing: 8) {
                     Text(String(format: NSLocalizedString("round_label", comment: ""), max(viewModel.currentRound, 1), viewModel.settings.rounds))
                         .font(.title2)
@@ -21,7 +21,7 @@ struct WorkoutView: View {
                         .foregroundColor(.white)
                 }
 
-                // Reset кнопка
+                // Reset button
                 if viewModel.isRunning || viewModel.phase != .finished {
                     Button(action: {
                         viewModel.resetWorkout()
@@ -32,19 +32,19 @@ struct WorkoutView: View {
                     .padding(.bottom, 8)
                 }
 
-                // Таймер
+                // Timer display
                 HStack {
                     Spacer()
-                    Text(timeString)
-                        .foregroundColor(.black)
+                    Text(timeString.isEmpty ? "--:--.--" : timeString)
                         .font(.system(size: 55, weight: .bold, design: .monospaced))
+                        .foregroundColor(.black)
                         .padding()
                         .background(Color.white)
                         .cornerRadius(16)
                     Spacer()
                 }
 
-                // Старт / Пауза / Завершить
+                // Start / Pause / Finish
                 if viewModel.phase != .finished {
                     Button(action: {
                         if viewModel.isRunning {
@@ -78,7 +78,7 @@ struct WorkoutView: View {
                         Button(action: {
                             viewModel.resetWorkout()
                         }) {
-                            Text(LocalizedStringKey("finish"))
+                            Text("finish".localized)
                         }
                         .foregroundColor(.black)
                     }
@@ -93,40 +93,27 @@ struct WorkoutView: View {
     private var backgroundColor: Color {
         switch viewModel.phase {
         case .work:
-            return Color.named(viewModel.workColorName)
+            return viewModel.workColor
         case .rest:
-            return Color.named(viewModel.restColorName)
+            return viewModel.restColor
         case .finished:
             return Color.yellow
         }
     }
 
     private var timeString: String {
-    let totalMilliseconds = Int(viewModel.remainingMilliseconds)
-    let ms = (totalMilliseconds % 1000) / 10 // две цифры
-    let sec = (totalMilliseconds / 1000) % 60
-    let min = totalMilliseconds / 60000
-    return String(format: "%02d:%02d.%02d", min, sec, ms)
-}
+        let totalMilliseconds = Int(viewModel.remainingMilliseconds)
+        let ms = (totalMilliseconds % 1000) / 10 // two digits
+        let sec = (totalMilliseconds / 1000) % 60
+        let min = totalMilliseconds / 60000
+        return String(format: "%02d:%02d.%02d", min, sec, ms)
+    }
 
     private var statusText: String {
         switch viewModel.phase {
         case .work: return "interval_run".localized
         case .rest: return "interval_rest".localized
         case .finished: return "interval_done".localized
-        }
-    }
-}
-
-extension Color {
-    static func named(_ name: String) -> Color {
-        switch name.lowercased() {
-        case "red": return .red
-        case "green": return .green
-        case "blue": return .blue
-        case "orange": return .orange
-        case "purple": return .purple
-        default: return .gray
         }
     }
 }

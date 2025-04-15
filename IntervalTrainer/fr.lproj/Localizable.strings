@@ -13,18 +13,20 @@
 "intervals" = "Intervalles";
 "workout_parameters" = "Paramètres de l'entraînement";
 "reset" = "Réinitialiser";
+
 "options" = "Options";
 "vibration" = "Vibration";
+"vibration_settings" = "Vibration Settings";
+"work_vibrations" = "Vib. effort";
+"rest_vibrations" = "Vib. repos";
 "sound" = "Jouer le son";
+
+
 "min" = "min";
 "sec" = "sec";
 "minutes" = "Minutes";
 "seconds" = "Secondes";
 
+"colors" = "Coleurs";
 "work_color" = "Couleur de la phase d'effort";
 "rest_color" = "Couleur de la phase de repos";
-"colors.red" = "Rouge";
-"colors.green" = "Vert";
-"colors.blue" = "Bleu";
-"colors.orange" = "Orange";
-"colors.purple" = "Violet";
