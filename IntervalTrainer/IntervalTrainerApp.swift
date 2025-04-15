@@ -11,7 +11,7 @@ import SwiftUI
 struct IntervalTrainerApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SettingsView()
         }
     }
 }
