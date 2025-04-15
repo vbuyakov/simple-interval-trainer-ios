@@ -6,8 +6,37 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		77727B582DAEA08F00A09412 /* IntervalTrainerWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 77727B4B2DAEA08D00A09412 /* IntervalTrainerWatch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		77727B562DAEA08F00A09412 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 770925AC2DAD833F00F3C6EC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 77727B4A2DAEA08D00A09412;
+			remoteInfo = "IntervalTrainerWatch Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		77727B592DAEA08F00A09412 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				77727B582DAEA08F00A09412 /* IntervalTrainerWatch Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		770925B42DAD833F00F3C6EC /* IntervalTrainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntervalTrainer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		77727B4B2DAEA08D00A09412 /* IntervalTrainerWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IntervalTrainerWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -16,10 +45,22 @@
 			path = IntervalTrainer;
 			sourceTree = "<group>";
 		};
+		77727B4C2DAEA08D00A09412 /* IntervalTrainerWatch Watch App */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "IntervalTrainerWatch Watch App";
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		770925B12DAD833F00F3C6EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		77727B482DAEA08D00A09412 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -33,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				770925B62DAD833F00F3C6EC /* IntervalTrainer */,
+				77727B4C2DAEA08D00A09412 /* IntervalTrainerWatch Watch App */,
 				770925B52DAD833F00F3C6EC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				770925B42DAD833F00F3C6EC /* IntervalTrainer.app */,
+				77727B4B2DAEA08D00A09412 /* IntervalTrainerWatch Watch App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -55,10 +98,12 @@
 				770925B02DAD833F00F3C6EC /* Sources */,
 				770925B12DAD833F00F3C6EC /* Frameworks */,
 				770925B22DAD833F00F3C6EC /* Resources */,
+				77727B592DAEA08F00A09412 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				77727B572DAEA08F00A09412 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				770925B62DAD833F00F3C6EC /* IntervalTrainer */,
@@ -68,6 +113,28 @@
 			);
 			productName = IntervalTrainer;
 			productReference = 770925B42DAD833F00F3C6EC /* IntervalTrainer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		77727B4A2DAEA08D00A09412 /* IntervalTrainerWatch Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 77727B5C2DAEA08F00A09412 /* Build configuration list for PBXNativeTarget "IntervalTrainerWatch Watch App" */;
+			buildPhases = (
+				77727B472DAEA08D00A09412 /* Sources */,
+				77727B482DAEA08D00A09412 /* Frameworks */,
+				77727B492DAEA08D00A09412 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				77727B4C2DAEA08D00A09412 /* IntervalTrainerWatch Watch App */,
+			);
+			name = "IntervalTrainerWatch Watch App";
+			packageProductDependencies = (
+			);
+			productName = "IntervalTrainerWatch Watch App";
+			productReference = 77727B4B2DAEA08D00A09412 /* IntervalTrainerWatch Watch App.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -81,6 +148,9 @@
 				LastUpgradeCheck = 1610;
 				TargetAttributes = {
 					770925B32DAD833F00F3C6EC = {
+						CreatedOnToolsVersion = 16.1;
+					};
+					77727B4A2DAEA08D00A09412 = {
 						CreatedOnToolsVersion = 16.1;
 					};
 				};
@@ -101,12 +171,20 @@
 			projectRoot = "";
 			targets = (
 				770925B32DAD833F00F3C6EC /* IntervalTrainer */,
+				77727B4A2DAEA08D00A09412 /* IntervalTrainerWatch Watch App */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		770925B22DAD833F00F3C6EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		77727B492DAEA08D00A09412 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -123,7 +201,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		77727B472DAEA08D00A09412 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		77727B572DAEA08F00A09412 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 77727B4A2DAEA08D00A09412 /* IntervalTrainerWatch Watch App */;
+			targetProxy = 77727B562DAEA08F00A09412 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		770925C02DAD834200F3C6EC /* Debug */ = {
@@ -250,6 +343,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = IntervalTrainer/IntervalTrainer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"IntervalTrainer/Preview Content\"";
@@ -280,6 +374,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = IntervalTrainer/IntervalTrainer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"IntervalTrainer/Preview Content\"";
@@ -305,6 +400,72 @@
 			};
 			name = Release;
 		};
+		77727B5A2DAEA08F00A09412 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = "IntervalTrainerWatch Watch App/IntervalTrainerWatch Watch App.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"IntervalTrainerWatch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = ULDH2LYM7V;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Intervals Trainer";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.testone.IntervalTrainer;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.testone.IntervalTrainer.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.7;
+			};
+			name = Debug;
+		};
+		77727B5B2DAEA08F00A09412 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = "IntervalTrainerWatch Watch App/IntervalTrainerWatch Watch App.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"IntervalTrainerWatch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = ULDH2LYM7V;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Intervals Trainer";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.testone.IntervalTrainer;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.testone.IntervalTrainer.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.7;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -322,6 +483,15 @@
 			buildConfigurations = (
 				770925C32DAD834200F3C6EC /* Debug */,
 				770925C42DAD834200F3C6EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		77727B5C2DAEA08F00A09412 /* Build configuration list for PBXNativeTarget "IntervalTrainerWatch Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				77727B5A2DAEA08F00A09412 /* Debug */,
+				77727B5B2DAEA08F00A09412 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

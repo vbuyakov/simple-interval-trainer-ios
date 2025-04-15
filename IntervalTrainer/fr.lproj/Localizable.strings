@@ -1,3 +1,4 @@
+"intervals" = "Intervalles";
 "rounds" = "Tours";
 "run_duration" = "Course (sec)";
 "rest_duration" = "Repos (sec)";
@@ -10,7 +11,7 @@
 "stop" = "Arrêter";
 "finish" = "Terminer";
 "workout" = "Entraînement";
-"intervals" = "Intervalles";
+
 "workout_parameters" = "Paramètres de l'entraînement";
 "reset" = "Réinitialiser";
 
